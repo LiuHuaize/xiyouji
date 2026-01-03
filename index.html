@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西游健康管家 - 仙界御医</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #d4af37;
+            --deep-red: #8b0000;
+            --parchment: #f4e4bc;
+        }
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background-color: #0d0d0d;
+            color: #e2e8f0;
+            /* 国画山水背景效果：使用深色叠加和水墨纹理 */
+            background-image: 
+                linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.95)),
+                url('https://images.unsplash.com/photo-1615184665113-64537332f703?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .gufeng-title {
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        .celestial-scroll {
+            background: linear-gradient(to bottom, rgba(26, 26, 26, 0.95), rgba(13, 13, 13, 0.98));
+            border: 2px solid var(--primary-gold);
+            position: relative;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+        }
+        .celestial-scroll::before, .celestial-scroll::after {
+            content: "";
+            position: absolute;
+            left: -10px;
+            right: -10px;
+            height: 15px;
+            background: var(--primary-gold);
+            border-radius: 5px;
+            z-index: 10;
+        }
+        .celestial-scroll::before { top: -8px; }
+        .celestial-scroll::after { bottom: -8px; }
+
+        .jade-button {
+            background: linear-gradient(135deg, #134e4a 0%, #064e3b 100%);
+            border: 1px solid #2dd4bf;
+            box-shadow: inset 0 0 10px rgba(45, 212, 191, 0.3);
+            transition: all 0.3s ease;
+        }
+        .jade-button:hover {
+            box-shadow: 0 0 20px rgba(45, 212, 191, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .gold-border {
+            border: 1px solid var(--primary-gold);
+        }
+        
+        @keyframes scroll-glow {
+            0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+            100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+        }
+        .active-gold {
+            animation: scroll-glow 2s infinite;
+        }
+        
+        /* 强制图片保持比例和居中 */
+        .character-img {
+            object-fit: cover;
+            object-position: top center;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
